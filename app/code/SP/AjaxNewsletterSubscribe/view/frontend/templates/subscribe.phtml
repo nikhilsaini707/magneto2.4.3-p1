@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div id="subscribe" data-bind="scope:'subscribe'">
+	<!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#subscribe": {
+                "Magento_Ui/js/core/app": {
+                   "components": {
+                        "subscribe": {
+                            "component": "SP_AjaxNewsletterSubscribe/js/subscribe",
+                            "config": {
+                                "getNewsletterUrl": "<?php /* @escapeNotVerified */ echo $block->getFormActionUrl(); ?>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</div>

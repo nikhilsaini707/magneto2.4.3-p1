@@ -1,0 +1,29 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="block newsletter">
+    <div class="title"><strong data-bind="i18n: 'Newsletter'"></strong></div>
+    <div class="content">
+        <form method="post" class="form subscribe" id="newsletter-validate-detail" data-role="newsletter-validate-detail" data-bind="submit: submitNewsletter">
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="newsletter">
+                        <span class="label" data-bind="i18n: 'Sign Up for Our Newsletter:'"></span>
+                        <input id="newsletter" name="email" type="email" placeholder="Enter your email address" data-validate="{required:true}" data-bind="value: email, attr: {'data-validate': JSON.stringify({required:true, 'validate-email':true})}" aria-required="true">
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <input type="hidden" value="" id="hideit" name="hideit">
+                <input type="submit" class="action subscribe primary" data-bind="value: $t('Subscribe')" />
+            </div>
+        </form>
+    </div>
+
+    <!-- ko if: msgSaved -->
+        <div class="loading-message"></div>
+    <!-- /ko -->
+</div>
